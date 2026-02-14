@@ -45,17 +45,17 @@ A single-page Next.js app that serves as a personal music player for a song made
 - [x] Metadata is configurable via constants (easy to update without code changes)
 - [x] Typecheck passes
 
-### US-004: Open Graph & Meta Tags
+### ✅ US-004: Open Graph & Meta Tags
 **Description:** As the creator, I want rich link previews when the URL is shared so it looks polished in iMessage, Twitter, Facebook, etc.
 
 **Acceptance Criteria:**
-- [ ] `og:title` set to song title
-- [ ] `og:description` set to a short description (e.g., artist + song name)
-- [ ] `og:image` set to the album art image
-- [ ] `og:type` set to `music.song`
-- [ ] `twitter:card` set to `summary_large_image`
-- [ ] Standard `<title>` and `<meta name="description">` tags set
-- [ ] Typecheck passes
+- [x] `og:title` set to song title
+- [x] `og:description` set to a short description (e.g., artist + song name)
+- [x] `og:image` set to the album art image
+- [x] `og:type` set to `music.song`
+- [x] `twitter:card` set to `summary_large_image`
+- [x] Standard `<title>` and `<meta name="description">` tags set
+- [x] Typecheck passes
 
 ### US-005: Responsive & Minimalist UI
 **Description:** As a visitor on any device, I want the player to look clean and work well on mobile and desktop.
