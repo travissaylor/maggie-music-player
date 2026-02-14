@@ -74,8 +74,8 @@ export default function Home() {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans">
-      <main className="flex flex-col items-center gap-6">
+    <div className="flex min-h-screen items-center justify-center bg-white font-sans">
+      <main className="flex w-full max-w-xs flex-col items-center gap-6 px-4">
         <Image
           src={SONG.albumArt}
           alt="Album art"
@@ -92,7 +92,7 @@ export default function Home() {
 
         <button
           onClick={togglePlayback}
-          className="flex h-16 w-16 items-center justify-center rounded-full bg-zinc-800 text-white transition-colors hover:bg-zinc-700"
+          className="flex h-16 w-16 items-center justify-center rounded-full bg-rose-400 text-white transition-colors hover:bg-rose-500"
           aria-label={isPlaying ? "Pause" : "Play"}
         >
           {isPlaying ? (
@@ -107,7 +107,7 @@ export default function Home() {
           )}
         </button>
 
-        <div className="w-72 flex flex-col gap-1">
+        <div className="w-full flex flex-col gap-1">
           <div
             ref={progressRef}
             className="relative h-2 w-full cursor-pointer rounded-full bg-zinc-200"
@@ -120,7 +120,7 @@ export default function Home() {
             aria-valuenow={Math.floor(currentTime)}
           >
             <div
-              className="absolute top-0 left-0 h-full rounded-full bg-zinc-800 transition-[width] duration-100"
+              className="absolute top-0 left-0 h-full rounded-full bg-rose-400 transition-[width] duration-100"
               style={{ width: `${progress}%` }}
             />
           </div>

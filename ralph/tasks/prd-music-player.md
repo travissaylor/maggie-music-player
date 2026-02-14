@@ -57,15 +57,15 @@ A single-page Next.js app that serves as a personal music player for a song made
 - [x] Standard `<title>` and `<meta name="description">` tags set
 - [x] Typecheck passes
 
-### US-005: Responsive & Minimalist UI
+### ✅ US-005: Responsive & Minimalist UI
 **Description:** As a visitor on any device, I want the player to look clean and work well on mobile and desktop.
 
 **Acceptance Criteria:**
-- [ ] Light background with subtle color accent (soft pastel or muted tone)
-- [ ] Player is centered on the page, card-style layout
-- [ ] Fully responsive — works on mobile screens (375px+) and desktop
-- [ ] Minimal UI: no unnecessary chrome, borders, or clutter
-- [ ] Typecheck passes
+- [x] Light background with subtle color accent (soft pastel or muted tone)
+- [x] Player is centered on the page, card-style layout
+- [x] Fully responsive — works on mobile screens (375px+) and desktop
+- [x] Minimal UI: no unnecessary chrome, borders, or clutter
+- [x] Typecheck passes
 
 ## Functional Requirements
 
