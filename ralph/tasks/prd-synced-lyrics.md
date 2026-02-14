@@ -34,16 +34,16 @@ Add a synced lyrics feature to the music player that displays timestamped lyrics
 - [x] Handle fetch errors gracefully (don't break the player if LRC is missing)
 - [x] Typecheck passes
 
-### US-003: Add lyrics toggle button
+### ✅ US-003: Add lyrics toggle button
 **Description:** As a user, I want a button near the play controls to show or hide the lyrics panel so I can choose whether to see lyrics.
 
 **Acceptance Criteria:**
-- [ ] Add a small icon button (lyrics/text icon) near the play/pause button
-- [ ] Button toggles a `showLyrics` boolean state
-- [ ] Button has a visual active/inactive state so the user knows if lyrics are on
-- [ ] Button has an accessible `aria-label` ("Show lyrics" / "Hide lyrics")
-- [ ] Lyrics panel is hidden by default
-- [ ] Typecheck passes
+- [x] Add a small icon button (lyrics/text icon) near the play/pause button
+- [x] Button toggles a `showLyrics` boolean state
+- [x] Button has a visual active/inactive state so the user knows if lyrics are on
+- [x] Button has an accessible `aria-label` ("Show lyrics" / "Hide lyrics")
+- [x] Lyrics panel is hidden by default
+- [x] Typecheck passes
 - [ ] Verify in browser using dev-browser skill
 
 ### US-004: Display scrolling lyrics panel below controls

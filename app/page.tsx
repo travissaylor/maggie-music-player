@@ -44,6 +44,7 @@ export default function Home() {
   const [duration, setDuration] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [lyrics, setLyrics] = useState<LyricLine[]>([]);
+  const [showLyrics, setShowLyrics] = useState(false);
 
   useEffect(() => {
     fetch(SONG.lyricsSrc)
@@ -127,22 +128,40 @@ export default function Home() {
           <p className="text-sm text-zinc-500">{SONG.artist}</p>
         </div>
 
-        <button
-          onClick={togglePlayback}
-          className="flex h-16 w-16 items-center justify-center rounded-full bg-rose-400 text-white transition-colors hover:bg-rose-500"
-          aria-label={isPlaying ? "Pause" : "Play"}
-        >
-          {isPlaying ? (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <rect x="6" y="4" width="4" height="16" rx="1" />
-              <rect x="14" y="4" width="4" height="16" rx="1" />
+        <div className="flex items-center gap-4">
+          <button
+            onClick={togglePlayback}
+            className="flex h-16 w-16 items-center justify-center rounded-full bg-rose-400 text-white transition-colors hover:bg-rose-500"
+            aria-label={isPlaying ? "Pause" : "Play"}
+          >
+            {isPlaying ? (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="6" y="4" width="4" height="16" rx="1" />
+                <rect x="14" y="4" width="4" height="16" rx="1" />
+              </svg>
+            ) : (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14z" />
+              </svg>
+            )}
+          </button>
+
+          <button
+            onClick={() => setShowLyrics(!showLyrics)}
+            className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors ${
+              showLyrics
+                ? "bg-rose-400 text-white hover:bg-rose-500"
+                : "bg-zinc-200 text-zinc-500 hover:bg-zinc-300"
+            }`}
+            aria-label={showLyrics ? "Hide lyrics" : "Show lyrics"}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 6h16" />
+              <path d="M4 12h12" />
+              <path d="M4 18h8" />
             </svg>
-          ) : (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14z" />
-            </svg>
-          )}
-        </button>
+          </button>
+        </div>
 
         <div className="w-full flex flex-col gap-1">
           <div
