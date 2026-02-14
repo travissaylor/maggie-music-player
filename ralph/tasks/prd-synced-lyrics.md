@@ -22,17 +22,17 @@ Add a synced lyrics feature to the music player that displays timestamped lyrics
 - [x] Place the corresponding `.lrc` file in `/public`
 - [x] Typecheck passes
 
-### US-002: Parse LRC file into timestamped lyrics
+### ✅ US-002: Parse LRC file into timestamped lyrics
 **Description:** As a developer, I need to fetch and parse the LRC file into a structured array of `{ time: number, text: string }` entries so the UI can look up the current line by playback time.
 
 **Acceptance Criteria:**
-- [ ] Fetch the LRC file from the public URL on component mount
-- [ ] Parse each line matching the `[mm:ss.xx] text` format into `{ time, text }` objects
-- [ ] Sort parsed entries by timestamp ascending
-- [ ] Ignore metadata tags (`[ti:`, `[ar:`, `[al:`, etc.) and blank lines
-- [ ] Store parsed lyrics in React state
-- [ ] Handle fetch errors gracefully (don't break the player if LRC is missing)
-- [ ] Typecheck passes
+- [x] Fetch the LRC file from the public URL on component mount
+- [x] Parse each line matching the `[mm:ss.xx] text` format into `{ time, text }` objects
+- [x] Sort parsed entries by timestamp ascending
+- [x] Ignore metadata tags (`[ti:`, `[ar:`, `[al:`, etc.) and blank lines
+- [x] Store parsed lyrics in React state
+- [x] Handle fetch errors gracefully (don't break the player if LRC is missing)
+- [x] Typecheck passes
 
 ### US-003: Add lyrics toggle button
 **Description:** As a user, I want a button near the play controls to show or hide the lyrics panel so I can choose whether to see lyrics.

@@ -4,6 +4,32 @@ import { useRef, useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { SONG } from "./constants";
 
+type LyricLine = { time: number; text: string };
+
+function parseLrc(text: string): LyricLine[] {
+  const lines = text.split("\n");
+  const result: LyricLine[] = [];
+  const re = /\[(\d{2}):(\d{2})\.(\d{2,3})\]\s*(.*)/;
+
+  for (const line of lines) {
+    const match = line.match(re);
+    if (!match) continue;
+
+    const [, min, sec, frac, rawText] = match;
+    const text = rawText.trim();
+
+    // Skip empty text and section markers like [Verse 1]
+    if (!text || /^\[.*\]$/.test(text)) continue;
+
+    const fracSeconds =
+      frac.length === 3 ? Number(frac) / 1000 : Number(frac) / 100;
+    const time = Number(min) * 60 + Number(sec) + fracSeconds;
+    result.push({ time, text });
+  }
+
+  return result.sort((a, b) => a.time - b.time);
+}
+
 function formatTime(seconds: number): string {
   const m = Math.floor(seconds / 60);
   const s = Math.floor(seconds % 60);
@@ -17,6 +43,17 @@ export default function Home() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [lyrics, setLyrics] = useState<LyricLine[]>([]);
+
+  useEffect(() => {
+    fetch(SONG.lyricsSrc)
+      .then((res) => {
+        if (!res.ok) throw new Error(`Failed to fetch LRC: ${res.status}`);
+        return res.text();
+      })
+      .then((text) => setLyrics(parseLrc(text)))
+      .catch((err) => console.warn("Could not load lyrics:", err));
+  }, []);
 
   function togglePlayback() {
     const audio = audioRef.current;
