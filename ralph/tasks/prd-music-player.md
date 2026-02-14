@@ -24,16 +24,16 @@ A single-page Next.js app that serves as a personal music player for a song made
 - [x] Typecheck passes
 - [x] Verify in browser using dev-browser skill
 
-### US-002: Seek / Progress Bar
+### ✅ US-002: Seek / Progress Bar
 **Description:** As a visitor, I want to see playback progress and scrub to any position in the song.
 
 **Acceptance Criteria:**
-- [ ] Progress bar shows current position relative to total duration
-- [ ] Clicking/dragging on the progress bar seeks to that position
-- [ ] Current time and total duration displayed as `m:ss` format
-- [ ] Progress bar updates smoothly during playback
-- [ ] Typecheck passes
-- [ ] Verify in browser using dev-browser skill
+- [x] Progress bar shows current position relative to total duration
+- [x] Clicking/dragging on the progress bar seeks to that position
+- [x] Current time and total duration displayed as `m:ss` format
+- [x] Progress bar updates smoothly during playback
+- [x] Typecheck passes
+- [x] Verify in browser using dev-browser skill
 
 ### US-003: Song Metadata Display
 **Description:** As a visitor, I want to see the song title, artist, and album art so I know what I'm listening to.
@@ -67,7 +67,6 @@ A single-page Next.js app that serves as a personal music player for a song made
 - [ ] Fully responsive — works on mobile screens (375px+) and desktop
 - [ ] Minimal UI: no unnecessary chrome, borders, or clutter
 - [ ] Typecheck passes
-- [ ] Verify in browser using dev-browser skill
 
 ## Functional Requirements
 
