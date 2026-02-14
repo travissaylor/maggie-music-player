@@ -35,16 +35,15 @@ A single-page Next.js app that serves as a personal music player for a song made
 - [x] Typecheck passes
 - [x] Verify in browser using dev-browser skill
 
-### US-003: Song Metadata Display
+### ✅ US-003: Song Metadata Display
 **Description:** As a visitor, I want to see the song title, artist, and album art so I know what I'm listening to.
 
 **Acceptance Criteria:**
-- [ ] Album art displayed prominently (centered, responsive sizing)
-- [ ] Song title displayed below the album art
-- [ ] Artist name displayed below the title
-- [ ] Metadata is configurable via constants (easy to update without code changes)
-- [ ] Typecheck passes
-- [ ] Verify in browser using dev-browser skill
+- [x] Album art displayed prominently (centered, responsive sizing)
+- [x] Song title displayed below the album art ("Love Figured Us Out")
+- [x] Artist name displayed below the title ("Valentine's Day Lover")
+- [x] Metadata is configurable via constants (easy to update without code changes)
+- [x] Typecheck passes
 
 ### US-004: Open Graph & Meta Tags
 **Description:** As the creator, I want rich link previews when the URL is shared so it looks polished in iMessage, Twitter, Facebook, etc.

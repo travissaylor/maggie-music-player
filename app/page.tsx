@@ -1,6 +1,8 @@
 "use client";
 
 import { useRef, useState, useCallback, useEffect } from "react";
+import Image from "next/image";
+import { SONG } from "./constants";
 
 function formatTime(seconds: number): string {
   const m = Math.floor(seconds / 60);
@@ -73,7 +75,21 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans">
-      <main className="flex flex-col items-center gap-8">
+      <main className="flex flex-col items-center gap-6">
+        <Image
+          src={SONG.albumArt}
+          alt="Album art"
+          width={256}
+          height={256}
+          className="h-64 w-64 rounded-lg object-cover shadow-md"
+          priority
+        />
+
+        <div className="flex flex-col items-center gap-1">
+          <h1 className="text-xl font-semibold text-zinc-900">{SONG.title}</h1>
+          <p className="text-sm text-zinc-500">{SONG.artist}</p>
+        </div>
+
         <button
           onClick={togglePlayback}
           className="flex h-16 w-16 items-center justify-center rounded-full bg-zinc-800 text-white transition-colors hover:bg-zinc-700"
@@ -116,7 +132,7 @@ export default function Home() {
 
         <audio
           ref={audioRef}
-          src="/love-figured-us-out.mp3"
+          src={SONG.audioSrc}
           onEnded={() => setIsPlaying(false)}
           onTimeUpdate={() => {
             if (!isDragging && audioRef.current) {
