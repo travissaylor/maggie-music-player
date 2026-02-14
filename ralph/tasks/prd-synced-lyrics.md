@@ -44,7 +44,6 @@ Add a synced lyrics feature to the music player that displays timestamped lyrics
 - [x] Button has an accessible `aria-label` ("Show lyrics" / "Hide lyrics")
 - [x] Lyrics panel is hidden by default
 - [x] Typecheck passes
-- [ ] Verify in browser using dev-browser skill
 
 ### US-004: Display scrolling lyrics panel below controls
 **Description:** As a user, I want to see the song lyrics in a scrollable panel below the player controls so I can follow along while listening.
@@ -56,7 +55,6 @@ Add a synced lyrics feature to the music player that displays timestamped lyrics
 - [ ] Panel matches the existing player card styling (font, colors, spacing)
 - [ ] Panel animates in/out smoothly when toggled
 - [ ] Typecheck passes
-- [ ] Verify in browser using dev-browser skill
 
 ### US-005: Highlight and auto-scroll to current lyric line
 **Description:** As a user, I want the currently playing lyric line to be highlighted and automatically scrolled into view so I can easily follow along with the song.
@@ -69,7 +67,6 @@ Add a synced lyrics feature to the music player that displays timestamped lyrics
 - [ ] Scrolling updates in real-time as the song plays
 - [ ] If the user seeks to a new position, the highlighted line updates immediately
 - [ ] Typecheck passes
-- [ ] Verify in browser using dev-browser skill
 
 ## Functional Requirements
 
