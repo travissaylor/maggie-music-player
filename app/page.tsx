@@ -186,6 +186,21 @@ export default function Home() {
           </div>
         </div>
 
+        {showLyrics && lyrics.length > 0 && (
+          <div
+            className="w-full max-h-48 overflow-y-auto rounded-lg bg-zinc-50 px-4 py-3"
+            style={{ animation: "lyrics-panel-in 200ms ease-out" }}
+          >
+            <div className="flex flex-col gap-1">
+              {lyrics.map((line) => (
+                <p key={line.time} className="text-sm text-center text-zinc-400">
+                  {line.text}
+                </p>
+              ))}
+            </div>
+          </div>
+        )}
+
         <audio
           ref={audioRef}
           src={SONG.audioSrc}
