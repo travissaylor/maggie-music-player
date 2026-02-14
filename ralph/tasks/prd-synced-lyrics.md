@@ -56,17 +56,17 @@ Add a synced lyrics feature to the music player that displays timestamped lyrics
 - [x] Panel animates in/out smoothly when toggled
 - [x] Typecheck passes
 
-### US-005: Highlight and auto-scroll to current lyric line
+### ✅ US-005: Highlight and auto-scroll to current lyric line
 **Description:** As a user, I want the currently playing lyric line to be highlighted and automatically scrolled into view so I can easily follow along with the song.
 
 **Acceptance Criteria:**
-- [ ] Determine the current lyric line by comparing `currentTime` to lyrics timestamps
-- [ ] Current line is visually highlighted (e.g., bolder text, rose accent color, larger size)
-- [ ] Non-current lines are dimmed/muted
-- [ ] Panel auto-scrolls smoothly to keep the current line centered/visible
-- [ ] Scrolling updates in real-time as the song plays
-- [ ] If the user seeks to a new position, the highlighted line updates immediately
-- [ ] Typecheck passes
+- [x] Determine the current lyric line by comparing `currentTime` to lyrics timestamps
+- [x] Current line is visually highlighted (e.g., bolder text, rose accent color, larger size)
+- [x] Non-current lines are dimmed/muted
+- [x] Panel auto-scrolls smoothly to keep the current line centered/visible
+- [x] Scrolling updates in real-time as the song plays
+- [x] If the user seeks to a new position, the highlighted line updates immediately
+- [x] Typecheck passes
 
 ## Functional Requirements
 

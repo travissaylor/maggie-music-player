@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useCallback, useEffect } from "react";
+import { useRef, useState, useCallback, useEffect, useMemo } from "react";
 import Image from "next/image";
 import { SONG } from "./constants";
 
@@ -45,6 +45,28 @@ export default function Home() {
   const [isDragging, setIsDragging] = useState(false);
   const [lyrics, setLyrics] = useState<LyricLine[]>([]);
   const [showLyrics, setShowLyrics] = useState(false);
+  const lyricsContainerRef = useRef<HTMLDivElement>(null);
+
+  const currentLyricIndex = useMemo(() => {
+    let index = -1;
+    for (let i = lyrics.length - 1; i >= 0; i--) {
+      if (lyrics[i].time <= currentTime) {
+        index = i;
+        break;
+      }
+    }
+    return index;
+  }, [lyrics, currentTime]);
+
+  useEffect(() => {
+    if (!showLyrics || currentLyricIndex < 0) return;
+    const container = lyricsContainerRef.current;
+    if (!container) return;
+    const el = container.querySelector(`[data-lyric-index="${currentLyricIndex}"]`);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [currentLyricIndex, showLyrics]);
 
   useEffect(() => {
     fetch(SONG.lyricsSrc)
@@ -188,12 +210,21 @@ export default function Home() {
 
         {showLyrics && lyrics.length > 0 && (
           <div
+            ref={lyricsContainerRef}
             className="w-full max-h-48 overflow-y-auto rounded-lg bg-zinc-50 px-4 py-3"
             style={{ animation: "lyrics-panel-in 200ms ease-out" }}
           >
             <div className="flex flex-col gap-1">
-              {lyrics.map((line) => (
-                <p key={line.time} className="text-sm text-center text-zinc-400">
+              {lyrics.map((line, i) => (
+                <p
+                  key={line.time}
+                  data-lyric-index={i}
+                  className={`text-center transition-all duration-300 ${
+                    i === currentLyricIndex
+                      ? "text-base font-semibold text-rose-500"
+                      : "text-sm text-zinc-400"
+                  }`}
+                >
                   {line.text}
                 </p>
               ))}
